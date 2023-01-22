@@ -33,6 +33,9 @@ def show_user(request):
     })
 
 def reg_user(request):
+    """This view allows new users that are not yet on the database to register. 
+    New users need to enter their username and password to register. 
+    """
     if request.method == "POST":
         form = RegisterUserForm(request.POST)
         if form.is_valid():

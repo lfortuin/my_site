@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Profile(models.Model):
+    """This class creates objects that can be used to fill out the CV form for each user."""
     name = models.CharField(max_length=50)
     phone = models.CharField(max_length=8)
     email = models.EmailField(max_length=150)

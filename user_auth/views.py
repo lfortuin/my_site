@@ -25,6 +25,7 @@ def authenticate_user(request):
         )
 
 def show_user(request):
+    """This view displays the username and encrypted password of the user after they have logged in."""
     print(request.user.username)
     return render(request, 'authentication/user.html', {
         "username":request.user.username,
@@ -32,6 +33,9 @@ def show_user(request):
     })
 
 def reg_user(request):
+    """This view allows new users that are not yet on the database to register. 
+    New users need to enter their username and password to register. 
+    """
     if request.method == "POST":
         form = RegisterUserForm(request.POST)
         if form.is_valid():

@@ -25,6 +25,7 @@ def authenticate_user(request):
         )
 
 def show_user(request):
+    """This view displays the username and encrypted password of the user after they have logged in."""
     print(request.user.username)
     return render(request, 'authentication/user.html', {
         "username":request.user.username,
